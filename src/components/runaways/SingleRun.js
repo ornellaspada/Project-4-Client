@@ -9,7 +9,8 @@ import {
   checkFav,
   removeFav, 
   addFav,
-  addRent
+  addRent, 
+  addBuy
 } from '../../lib/api'
 import { isAuthenticated } from '../../lib/auth'
 
@@ -19,6 +20,7 @@ function SingleRun() {
   const [runaway, setRunaway] = React.useState(null)
   const history = useHistory()
   const [popUpOpen, setPopUpOpen] = React.useState(false)
+  const [popUpBuyOpen, setPopUpBuyOpen] = React.useState(false)
   const [dateChoosen, setDateChoosen] = React.useState(null)
   const [isError, setIsError] = React.useState(false)
   const isLoggedIn = isAuthenticated()
@@ -61,17 +63,17 @@ function SingleRun() {
   }, [runId, isLoggedIn])
 
   const handleDelete = async () => {
-    await deleteRunaway(runaway._id)
-    history.push('/runaways/favorites')
+    await deleteRunaway(runaway.id)
+    history.push('/favorite')
   }
 
   const handleAddFav = async () => {
-    await addFav(runaway._id)
+    await addFav(runaway.id)
     setIsFav(true)
   }
 
   const handleRemFav = async () => {
-    await removeFav(runaway._id)
+    await removeFav(runaway.id)
     setIsFav(false)
   }
   console.log(isLoggedIn)
@@ -82,12 +84,20 @@ function SingleRun() {
   const handleChange = (e) =>{
     setDateChoosen(e.target.value)
   }
+  const handleBuyClick = (e) => {
+    setPopUpBuyOpen(true)
+  }
 
   const handleRent = async () =>{
     await addRent( runaway.id, { 'date_returned': dateChoosen } ) 
     setPopUpOpen(false)
-    history.push('/runaways/favorite')
+    history.push('/favorite')
   }
+  const handleBuy = async () =>{
+    await addBuy(runaway.id) 
+    history.push('/favorite')
+  }
+
   console.log('Orn', dateChoosen)
   return runaway ? (
 
@@ -125,7 +135,7 @@ function SingleRun() {
 
         {isLoggedIn && (
           <div>
-            <Link to={`/runaways/${runaway._id}/comment`}>
+            <Link to={`/runaways/${runaway.id}/comment`}>
               <button> Comment </button>
             </Link>
           </div>
@@ -136,13 +146,23 @@ function SingleRun() {
           
           </div>
         )} 
+        {isLoggedIn && (
+          <div>
+            <button onClick={handleBuyClick}> Buy </button>
+          
+          </div>
+        )} 
       </section>
       <div className={ popUpOpen ? 'open' : 'closed' }>
         <p>here is the pop-up</p>
         <input type = 'date' onChange={handleChange}></input>
         <button onClick={handleRent}>Confirm the Rent</button>
         <button>Cancel the Rent</button>
-
+      </div>
+      <div className={ popUpBuyOpen ? 'open' : 'closed' }>
+        <p>Are you sure you want to continue?</p>
+        <button onClick={handleBuy}>Confirm the purchase</button>
+        <button>Cancel the purchase</button>
       </div>
     </>
 

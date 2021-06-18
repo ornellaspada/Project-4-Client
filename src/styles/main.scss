@@ -14,3 +14,41 @@ color: white;
 .closed{
 display: none;
 }
+.singleframe_run{
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 2 - 40px);
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.singleframe_run1{
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 4 - 40px);
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.image{
+max-width: 90%;
+object-fit: cover;
+height: 500px;
+width: 300px;
+}
+.figure{
+  height: 500px;
+  width: 300px;
+}
+.image1{
+  max-width: 90%;
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  }
+  .figure1{
+    height: 400px;
+    width: 300px;
+  }

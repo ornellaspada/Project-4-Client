@@ -55,37 +55,43 @@ function RunShow() {
   console.log(runaways)
   return (
     <>
-      <div>
-        <select onChange={handleChange}>
-          <option>Brands</option>
-          <option>Prada</option>
-          <option>Hermes</option>
-          <option>Giorgio Armani</option>
-        </select>
-      </div>
-      <div>
-        <select onChange={handleChange}>
-          <option>Season</option>
-          <option>Fall-Winter</option>
-          <option>Spring-Summer</option>
-        </select>
-      </div>
-      <div>
-        <select onChange={handleChange}>
-          <option>Year</option>
-          <option>1999</option>
-          <option>1995</option>
-          <option>2000</option>
-          <option>2001</option>
-        </select>
-      </div>
-      <section>
-        <div>
-          {runaways && (
-            filteredrunaways.map(runaway => <RunCard key={runaway.id} {...runaway} />)
-          )}
+      <body>
+        <div className='frame_all'>
+          <div className='button_main_frame'>
+            <div>
+              <select onChange={handleChange}>
+                <option>Brands</option>
+                <option>Prada</option>
+                <option>Hermes</option>
+                <option>Giorgio Armani</option>
+              </select>
+            </div>
+            <div>
+              <select onChange={handleChange}>
+                <option>Season</option>
+                <option>Fall-Winter</option>
+                <option>Spring-Summer</option>
+              </select>
+            </div>
+            <div>
+              <select onChange={handleChange}>
+                <option>Year</option>
+                <option>1999</option>
+                <option>1995</option>
+                <option>2000</option>
+                <option>2001</option>
+              </select>
+            </div>
+          </div>
+          <section className='run-bigframe'>
+            <div className='runframe'>
+              {runaways && (
+                filteredrunaways.map(runaway => <RunCard key={runaway.id} {...runaway} />)
+              )}
+            </div>
+          </section>
         </div>
-      </section>
+      </body>
 
     </>
 

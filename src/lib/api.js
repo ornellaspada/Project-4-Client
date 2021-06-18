@@ -32,10 +32,10 @@ export function deleteRunaway(id) {
 }
 
 export function addFav(id){
-  return axios.post(`${baseUrl}/favorite/${id}`, null,  headers())
+  return axios.post(`${baseUrl}/runaways/${id}/favorite/`, null,  headers())
 }
 export function removeFav(id){
-  return axios.post(`${baseUrl}/favorite/${id}`, null,  headers())
+  return axios.post(`${baseUrl}/runaways/${id}/favorite/`, null,  headers())
 }
 export function checkFav(id){
   return axios.get(`${baseUrl}/favorite/${id}`, headers())
@@ -54,4 +54,7 @@ export function getUserProfile(){
 
 export function addRent(runId, formData){
   return axios.post(`${baseUrl}/runaways/${runId}/rent/`, formData, headers())
+}
+export function addBuy(runId, formData){
+  return axios.post(`${baseUrl}/runaways/${runId}/purchase/`, formData, headers())
 }

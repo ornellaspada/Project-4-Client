@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getUserProfile } from '../../lib/api'
-import RunCard from './RunCard'
+// import RunCard from './RunCard'
+import RunCardFav from './RunCardFav'
 
 function MyFav() {
   const [users, setUsers] = React.useState(null)
@@ -27,7 +28,7 @@ function MyFav() {
         <div>
           {users && users.rentals.map((rental) => {
             console.log(rental)
-            return ( <RunCard key={rental.id} {...rental.runaway} />)          
+            return ( <RunCardFav key={rental.id} {...rental.runaway} />)          
           })
           }
         </div>
@@ -37,7 +38,7 @@ function MyFav() {
         <div>
           {users && users.purchases.map((purchase) => {
             console.log(purchase)
-            return ( <RunCard key={purchase.id} {...purchase.runaway} />)          
+            return ( <RunCardFav key={purchase.id} {...purchase.runaway} />)          
           })
           }
         </div>
@@ -47,7 +48,7 @@ function MyFav() {
         <div>
           {users && users.favorites.map((favorite) => {
             console.log(favorite)
-            return ( <RunCard key={favorite.id} {...favorite} />)          
+            return ( <RunCardFav key={favorite.id} {...favorite} />)          
           })
           }
         </div>
