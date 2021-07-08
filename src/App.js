@@ -22,11 +22,11 @@ function App() {
       <NavBar /> 
       <Switch>
         <Route exact path='/' component={ Home } />
-        <Route path = '/register' component ={Register}/>
-        <Route path='/login' component={Login}/>
-        <Route path="/runaways/:runId" component={SingleRun} />
-        <Route path="/runaways" component={RunShow} />
-        <Route path="/favorite" component={MyFav} />
+        <Route path = '/register/' component ={Register}/>
+        <Route path='/login/' component={Login}/>
+        <Route path="/runaways/:runId/" component={SingleRun} />
+        <Route path="/runaways/" component={RunShow} />
+        <Route path="/favorite/" component={MyFav} />
       </Switch>
       <Footer />
     </BrowserRouter>

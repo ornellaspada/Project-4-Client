@@ -1,9 +1,10 @@
 import axios from 'axios'
+import { baseUrl } from '../config'
 
 
 import { getToken, getUserId } from './auth'
 
-const baseUrl = '/api'
+// const baseUrl = '/api'
 
 function headers() {
   return {
@@ -38,14 +39,14 @@ export function removeFav(id){
   return axios.post(`${baseUrl}/runaways/${id}/favorite/`, null,  headers())
 }
 export function checkFav(id){
-  return axios.get(`${baseUrl}/favorite/${id}`, headers())
+  return axios.get(`${baseUrl}/favorite/${id}/`, headers())
 }
 export function showMyFavs(){
-  return axios.get(`${baseUrl}/favorite`, headers())
+  return axios.get(`${baseUrl}/favorite/`, headers())
 }
 
 export function createComment(formData, runId) {
-  return axios.post(`${baseUrl}/places/${runId}/review`, formData, headers())
+  return axios.post(`${baseUrl}/places/${runId}/review/`, formData, headers())
 
 }
 export function getUserProfile(){
