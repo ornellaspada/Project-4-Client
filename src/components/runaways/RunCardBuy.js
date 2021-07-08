@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
-function RunCardFav({ id, brand, year, season, image }) {
- 
-  // const { id, brand, year, season, image } = runaway
+function RunCardBuy({ datePurchased, runaway }) {
+  
+  const { id, brand, year, season, image, sale_price } = runaway
   return (
     <div className="singleframe_run1">
       <Link to={`/runaways/${id}`} style={{ textDecoration: 'none', color: 'black' }}>
@@ -14,8 +14,12 @@ function RunCardFav({ id, brand, year, season, image }) {
         <figure className='figure1'>
           <img className='image1'src={image} alt={brand} />
         </figure>
+        <div className='bottom_details'>
+          <h5 className='sale_price'>SALE PRICE {sale_price}</h5>
+          <h5 className='sale_date'>PURCHASING DATE {datePurchased}</h5>
+        </div>
       </Link>
     </div>
   )
 }
-export default RunCardFav
+export default RunCardBuy

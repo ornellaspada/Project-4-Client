@@ -1,26 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
 * {
   box-sizing: border-box;
+  // font-family: 'Arimo', sans-serif;
+  // font-weight: bold;
 }
+
 .open{
 display: block;
 position: fixed; 
-top: 0;
-left:0;
-width: 100%;
-height: 50vh;
-background-color: black;
+top: 30%;
+left: 60%;
+width: 30%;
+height: 40vh;
+background-color:  rgba(0, 0, 0, 0.2);
 color: white;
 }
 .closed{
 display: none;
 }
+.pop-up-frame{
+display:flex;
+flex-direction: column;
+justify-content: space-around;
+}
+body{
+margin: 0px;
+}
+.runframe{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.run-bigframe{
+  display: flex;
+  justify-content: space-around;
+}
 .singleframe_run{
   display: flex;
   flex-direction: column;
-  width: calc(100% / 2 - 40px);
+  // width: calc(100% / 3 - 80px);
+  width: 30%;
   padding: 10px;
-  margin: 10px;
-  border: 1px solid rgba(0,0,0,0.2);
+  margin: 10px 0px;
+  border: 1px solid rgba(92, 64, 51, 0.5);
 }
 
 .singleframe_run1{
@@ -29,7 +53,12 @@ display: none;
   width: calc(100% / 4 - 40px);
   padding: 10px;
   margin: 10px;
-  border: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid rgba(59, 47, 47, 0.2);
+}
+.run-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .image{
@@ -39,16 +68,382 @@ height: 500px;
 width: 300px;
 }
 .figure{
-  height: 500px;
-  width: 300px;
+  // height: 500px;
+  // width: 300px;
+  display: flex;
+  justify-content: center;
 }
 .image1{
   max-width: 90%;
   object-fit: cover;
-  height: 50px;
-  width: 50px;
+  height: 300px;
+  width: 200px;
   }
   .figure1{
-    height: 400px;
-    width: 300px;
+    // height: 50px;
+    // width: 50px;
   }
+  .vogue-title{
+    font-family: 'Elsie', cursive;
+    font-size: 100px;
+    margin: 10px;
+    margin-top: black;
+  }
+  .header-container{
+  border-top: 15px solid black;
+  
+  }
+  .navbar{
+    border-top: 1px solid black;
+    background-color: white;
+    display:flex;
+  }
+  .navbar-contains-all{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 20px;
+  }
+  .navbar-items{
+    margin: 15px;
+    text-transform: uppercase;
+    font-family: 'Secular One', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  .link-nav:hover{
+    color: red !important;
+  }
+  .navbar-user{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .navbar-register{
+    text-decoration: none;
+    display: flex;
+    justify-content: end; 
+  
+  }
+  .navbar-collection{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .frame_all-scroll{
+    display: flex;
+  }
+  .scroll_main_frame{
+    display: flex;
+    flex-direction: row;
+    padding: 0px 20px;
+  }
+  .button-brands{
+    padding:10px;
+    border: brown;
+  }
+  .in-button-brands{
+   padding: 10px;
+   background-color: black;
+   color: white;
+   font-size: 15px;
+   padding-right: 30px;
+   font-family: 'Arimo', sans-serif;
+  }
+  .in-button-season{
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    padding-right: 30px;
+    font-family: 'Arimo', sans-serif;
+  }
+    .button-season{
+    padding:10px;
+    border: brown; 
+    }
+    .in-button-year{
+      padding: 10px;
+      background-color: black;
+      color: white;
+      font-size: 15px;
+      padding-right: 30px;
+      font-family: 'Arimo', sans-serif;
+    }
+      .button-year{
+      padding:10px;
+      border: brown; 
+      }
+
+  
+  .singleframe_run{
+    display: inline-block;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .run-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .run-prices{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+  }
+  .singleframe_run1{
+    display: inline-block;
+    flex-direction: row;
+    justify-content:center; 
+  }
+  .div-footer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .p-footer{
+    font-family: 'Secular One', sans-serif;
+    text-transform: uppercase;
+  }
+  // single run
+  .s-r-info-container{
+   display: flex; 
+   justify-content: center;
+  }
+  .single-run-container{
+    max-width: 800px;
+  }
+  .rent_price, .sale_price{
+margin: 5px 0px;
+  }
+.s-r-image{
+  max-height: 50vh;
+}
+.homepage-container {
+display: flex;
+flex-flow: row nowrap;
+height: 60vh;
+&:hover > .homepage-image{
+  -webkit-filter: invert(40%) grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(400%) contrast(2);
+    filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8); 
+}
+}
+.homepage-image{
+  width: 20%;
+//   &:hover {
+//     -webkit-filter: invert(40%) grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(400%) contrast(2);
+//     filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+  
+// }
+  // border: 1px;
+}
+
+.homepage-article{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-around;
+}
+.one{
+background: url('https://compass-media.vogue.it/photos/5d286d8e51e3df00083ea965/master/w_1280,c_limit/001-Carolyn-Bessette-Kennedty-Styleicon-Vogueint-Jun-25-Getty-Images.jpg');
+background-size: cover;
+background-position: center;
+}
+.two{
+  background: url('https://www.amica.it/wp-content/uploads/2021/03/carolyn-bessette-stile-GettyImages-51063379-copia.jpg');
+  background-size: cover;
+  background-position: center;
+  }
+  .three{
+    background: url('https://hips.hearstapps.com/toc.h-cdn.co/assets/16/35/outfit7.jpg?crop=1.0xw:1xh;center,top&resize=480:*');
+    background-size: cover;
+    background-position: center;
+    }
+  .four{
+    background: url('https://i2.wp.com/fashionrocks.net/wp-content/uploads/2019/07/jfkjr-carolynbessette-5134096cn.jpg?fit=600%2C900&ssl=1');
+    background-size: cover;
+    background-position: center; 
+  }
+  .five{
+    background: url('https://media.vanityfair.com/photos/596d2cbe49aa051344296fc8/master/w_1600%2Cc_limit/Carolyn-Kennedy-Style-SS08.jpg');
+    background-size: cover;
+    background-position: center;  
+  }
+  .six{
+    background: url('https://compass-media.vogue.it/photos/5d079fc71044c6fd800ac81d/master/w_1280,c_limit/001-American-Gigolo-Armani-on-film-Vogueint-April15-Alamy.jpg');
+    background-size: cover;
+    background-position: center;   
+  }
+  .seven{
+    background: url('https://i.pinimg.com/originals/09/ef/a7/09efa788caf2842ada21a877a0371753.jpg');
+    background-size: cover;
+    background-position: center;   
+  }
+  .eight{
+    background: url('https://www.amica.it/wp-content/wp-content/gallery/richard-gere/american-gigolo-1980-2.jpg');
+    background-size: cover;
+    background-position: center;   
+  }
+  // .nine{
+  //   display: flex;
+  //   justify-content: center;
+  // }
+
+.homepage-text{
+padding: 10px;
+position: center;
+display: flex;
+justify-content: center;
+background-color: black;
+}
+.title-one{
+font-size: 25px;
+color: white;
+}
+.nine{
+  flex-grow:2;
+  border: 1px;
+}
+.single-run-display{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+.buttons-to-user{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+button{
+ font-family:'Secular One', sans-serif ;
+ background-color: black;
+ color: white;
+}
+.s-r-botton-delete{
+padding:10px;
+background-color: black;
+color: white;
+}
+.s-r-botton-add{
+  padding:10px;
+  background-color: black;
+  color: white;
+  }
+  .s-r-botton-rent{
+    padding:10px;
+    background-color: black;
+    color: white;
+    }
+    .s-r-botton-buy{
+      padding:10px;
+      background-color: black;
+      color: white;
+      }
+.brand-single{
+  margin-right: 5px;
+}
+.brand-single-season{
+  margin-right: 5px;
+}
+.button-pop-up{
+background-color: black;
+color: white;
+}
+.show-details{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.brand{
+  margin-right: 5px;
+  font-family:'Secular One', sans-serif;
+}
+.season{
+  margin-right: 5px;
+  font-family:'Secular One', sans-serif;
+}
+.year{
+  margin-right: 5px;
+  font-family:'Secular One', sans-serif;
+}
+.bottom_details{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column; 
+  font-family:'Secular One', sans-serif;
+}
+.sale_price{
+  font-family:'Secular One', sans-serif;
+}
+.sale_date{
+  font-family:'Secular One', sans-serif;
+}
+.rent_price{
+  font-family:'Secular One', sans-serif;
+}
+.rent_returned{
+  font-family:'Secular One', sans-serif;
+}
+.rent_rented{
+  font-family:'Secular One', sans-serif;
+}
+.fav-title{
+  font-family:'Secular One', sans-serif; 
+  padding: 5px;
+  margin-left: 8px;
+}
+.brand-single{
+  font-family:'Secular One', sans-serif; 
+}
+.brand-single-season{
+  font-family:'Secular One', sans-serif;  
+}
+.brand-single-year{
+  font-family:'Secular One', sans-serif;   
+}
+.homepage-nine-title{
+  font-weight: bold;
+}
+.labels{
+  font-family:'Secular One', sans-serif;  
+}
+hr{
+  width: 100%;
+  border-bottom:1px solid black ;
+}
+.form, .field, .columns{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.control{
+  display: flex;
+  justify-content: center;
+}
+.button-submit{
+margin-top: 20px;
+}
+.section{
+  min-height: 70vh;
+}
+.form{
+  height: 50vh;
+  width: 50vw;
+  border: 1px solid black;
+  justify-content: center;
+
+}
+.columns{
+  min-height: 70vh;
+  justify-content: center;
+}
+
+
+
+
+ 
+

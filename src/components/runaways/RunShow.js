@@ -55,43 +55,43 @@ function RunShow() {
   console.log(runaways)
   return (
     <>
-      <body>
-        <div className='frame_all'>
-          <div className='button_main_frame'>
-            <div>
-              <select onChange={handleChange}>
-                <option>Brands</option>
-                <option>Prada</option>
-                <option>Hermes</option>
-                <option>Giorgio Armani</option>
-              </select>
-            </div>
-            <div>
-              <select onChange={handleChange}>
-                <option>Season</option>
-                <option>Fall-Winter</option>
-                <option>Spring-Summer</option>
-              </select>
-            </div>
-            <div>
-              <select onChange={handleChange}>
-                <option>Year</option>
-                <option>1999</option>
-                <option>1995</option>
-                <option>2000</option>
-                <option>2001</option>
-              </select>
-            </div>
+  
+      <div className='frame_scroll'>
+        <div className='scroll_main_frame'>
+          <div className='button-brands'>
+            <select className='in-button-brands'onChange={handleChange}>
+              <option className='scroll-text'>BRAND</option>
+              <option>Prada</option>
+              <option>Hermes</option>
+              <option>Giorgio Armani</option>
+            </select>
           </div>
-          <section className='run-bigframe'>
-            <div className='runframe'>
-              {runaways && (
-                filteredrunaways.map(runaway => <RunCard key={runaway.id} {...runaway} />)
-              )}
-            </div>
-          </section>
+          <div className='button-season'>
+            <select className='in-button-season'onChange={handleChange}>
+              <option>SEASON</option>
+              <option>Fall-Winter</option>
+              <option>Spring-Summer</option>
+            </select>
+          </div>
+          <div className='button-year'>
+            <select className='in-button-year'onChange={handleChange}>
+              <option>YEAR</option>
+              <option>1999</option>
+              <option>1995</option>
+              <option>2000</option>
+              <option>2001</option>
+            </select>
+          </div>
         </div>
-      </body>
+        <section className='run-bigframe'>
+          <div className='runframe'>
+            {runaways && (
+              filteredrunaways.map(runaway => <RunCard key={runaway.id} {...runaway} />)
+            )}
+          </div>
+        </section>
+      </div>
+    
 
     </>
 

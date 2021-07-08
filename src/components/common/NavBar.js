@@ -4,61 +4,41 @@ import { isAuthenticated, removeToken } from '../../lib/auth'
 
 function NavBar() {
   const history = useHistory()
-  const [isOpen, setIsOpen] = React.useState(false)
   const isLoggedIn = isAuthenticated()
 
-  const handleToggle = () => {
-    setIsOpen(!isOpen)
-    console.log('clicked')
-  }
   const handleLogout = () =>{
     removeToken()
-    history.push('/')
+    history.push('/login')
   }
 
 
   return (
-    <nav className='navbar navbar-style'>
-      <div className='container'>
-        <div className='navbar-brand'> 
-          <Link to = '/' className='navbar-item has-text-light'>
+    <nav className='navbar'>
+      <div className='navbar-contains-all'>
+        <div className='navbar-collection'>
+          <div className='home-container navbar-home navbar-items'> 
+            <Link to = '/'  style={{ textDecoration: 'none', color: 'black' }} className='link-nav'>
             Home
-          </Link>
-          <span
-            className={`navbar-burger ${isOpen ? 'is-active' : ''}`}
-            aria-label="menu"
-            aria-expanded="false"
-            onClick={handleToggle}
-          >
-            <span className="has-text-light" aria-hidden="true"></span>
-            <span className="has-text-light" aria-hidden="true"></span>
-            <span className="has-text-light" aria-hidden="true"></span>
-          </span>
-        </div>
-        <div className={` navbar-style navbar-menu ${isOpen ? 'is-active' : ''}`}>
-          <div 
-            className="navbar-end ">
-            <div className="navbar-item">
-              <div className="navbar-item">
-                {isLoggedIn && <div className='navbar-item'><Link to ='/favorite/' className="has-text-light">
-                  My Gallery
-                </Link></div>}
-                {isLoggedIn && <div className='navbar-item'><Link to ='/runaways/' className="has-text-light">
-                Collections
-                </Link></div>}
-                {!isLoggedIn &&  
-                  <button className="navbar-item button button-nav"><Link to ='/register/' className="link-nav" href='/'>Register</Link></button>
-                
-                }
-                {!isLoggedIn ?
-                  <button className="navbar-item button button-nav"><Link to = '/login/' className=' link-nav' href='/'>Log In</Link> </button>
-                  :
-                  <button className='button button-nav' onClick= {handleLogout}>
-                  Log out</button>
-                }
-              </div>
-            </div>
+            </Link>
           </div>
+          {isLoggedIn && <div className='navbar-items navbar-gallery'><Link to ='/favorite/' className="link-nav" style={{ textDecoration: 'none', color: 'black' }}>
+                  My Gallery
+          </Link></div>}
+          {isLoggedIn && <div className='navbar-items navbar-collection'><Link to ='/runaways/' className="link-nav" style={{ textDecoration: 'none', color: 'black' }}>
+                Collections
+          </Link></div>}
+        </div>
+        <div className='navbar-user'>
+          {!isLoggedIn &&  
+                  <div className="navbar-items navbar-register"><Link to ='/register/' className="link-nav" href='/' style={{ textDecoration: 'none', color: 'black' }}>Register</Link></div>
+                
+          }
+          {!isLoggedIn ?
+            <div className="navbar-items navbar-login"><Link to = '/login/' className=' link-nav' href='/' style={{ textDecoration: 'none', color: 'black'}}>Log In</Link> </div>
+            :
+            <div className='navbar-items navbar-logout link-nav' onClick= {handleLogout}>
+                  Log out</div>
+          }
         </div>
       </div>
     </nav>

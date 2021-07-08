@@ -18,8 +18,8 @@ function App() {
   return (
     // <>
     <BrowserRouter>
-      <NavBar /> 
       <Header />
+      <NavBar /> 
       <Switch>
         <Route exact path='/' component={ Home } />
         <Route path = '/register' component ={Register}/>

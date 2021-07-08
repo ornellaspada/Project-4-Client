@@ -21,7 +21,7 @@ function Login(){
       const res = await axios.post('/api/auth/login/', formData)
       console.log(res)
       setToken(res.data.token)
-      history.push('/places/map')
+      history.push('/runaways')
     } catch (err) {
       console.log(err.response)
       setIsError(true)
@@ -35,10 +35,10 @@ function Login(){
     <section className="section">
       <div className="container">
         <div className="columns">
-          <form
-            className="forms box column is-half is-offset-one-quarter" onSubmit={handleSubmit} >
+          <form className='form'
+            onSubmit={handleSubmit} >
             <div className="field">
-              <label className="label labels">Email*</label>
+              <label className="labels">Email*</label>
               <div className="control">
                 <input
                   className="input"
@@ -52,7 +52,7 @@ function Login(){
             
             </div>
             <div className="field">
-              <label className="label labels">Password*</label>
+              <label className="labels">Password*</label>
               <div className="control">
                 <input
                   type="password"
@@ -67,7 +67,7 @@ function Login(){
             </div>
             <div className="field">
               <button type="submit" className="button-submit button is-fullwidth is-black">
-              Log me in!
+              LOG IN
               </button>
             </div>
           </form>

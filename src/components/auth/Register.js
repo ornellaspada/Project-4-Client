@@ -29,7 +29,7 @@ function Register() {
     <section className='section'>
       <div className='container'>
         <div className='columns'>
-          <form className='forms column is-half is-offset-one-quarter' onSubmit={handleSubmit}>
+          <form className='form' onSubmit={handleSubmit}>
             <div className="field">
               <label className="label labels" htmlFor="username"> Username*
               </label>
@@ -61,7 +61,7 @@ function Register() {
               {formErrors.password && <small  className='help is-danger '> Password is required </small>}
             </div>
             <div className="field">
-              <label className="label labels" htmlFor="ProfileImage"> ProfileImage
+              <label className="label labels" htmlFor="ProfileImage"> Profile Image
               </label>
               <div className="field">
                 <input className={`input ${formErrors.profileImage ? 'is-danger' : '' } `}
@@ -82,7 +82,7 @@ function Register() {
               {formErrors.passwordConfirmation && <small  className='help is-danger '> Password Confirmation is required </small>}
             </div>
             <div className="field">
-              <button type="submit" className="button-submit button is-fullwidth is-black">Register me!</button>
+              <button type="submit" className="button-submit button">REGISTER</button>
             </div>
           </form>
         </div>

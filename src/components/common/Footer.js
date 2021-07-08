@@ -1,8 +1,8 @@
 function Footer() {
   return (
   
-    <div>
-      <p>Built and Designed by Ornella Spada</p>
+    <div className='div-footer'>
+      <p className='p-footer'>Built and Designed by Ornella Spada</p>
     </div>
   
     

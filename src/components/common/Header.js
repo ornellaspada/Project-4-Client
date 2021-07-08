@@ -1,9 +1,8 @@
+
 function Header() {
   return (
-    <section> 
-      <div> 
-        <p>RE-VOGUE</p>
-      </div>
+    <section className='header-container'> 
+      <p className='vogue-title'>RE-VOGUE</p>
     </section>
   )
 

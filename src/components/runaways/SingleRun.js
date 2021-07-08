@@ -78,14 +78,18 @@ function SingleRun() {
   }
   console.log(isLoggedIn)
 
-  const handleClick = (e) =>{
+  const handleClick = () =>{
+    console.log('click')
     setPopUpOpen(true)
+    setPopUpBuyOpen(false)
   }
   const handleChange = (e) =>{
     setDateChoosen(e.target.value)
   }
-  const handleBuyClick = (e) => {
+  const handleBuyClick = () => {
+    console.log('click3')
     setPopUpBuyOpen(true)
+    setPopUpOpen(false)
   }
 
   const handleRent = async () =>{
@@ -97,72 +101,87 @@ function SingleRun() {
     await addBuy(runaway.id) 
     history.push('/favorite')
   }
+  const cancelBuy = async ()=>{
+    setPopUpBuyOpen(false)
+  }
+  const cancelRent = async ()=>{
+    setPopUpOpen(false)
+  }
 
-  console.log('Orn', dateChoosen)
   return runaway ? (
 
     <>
-      <div>
-        <div>{runaway.brand}</div>
-      </div>
-      <div>
-        <div>{runaway.season}</div>
-      </div>
-      <div>
-        <div>{runaway.year}</div>
-      </div>
-      <figure>
-        <img src={runaway.image} alt={runaway.brand} />
-      </figure>
-      <div>
-        <h5>{runaway.price}</h5>
-      </div>
-      <section>
+      <div className='single-run-container'>
+        <div className='s-r-info-container'>
+          <div className='brand-sigle-run'>
+            <div className='brand-single'>{runaway.brand}</div>
+          </div>
+          <div className='brand-single-season'>
+            <div>{runaway.season}</div>
+          </div>
+          <div className='brand-single-year'>
+            <div>{runaway.year}</div>
+          </div>
+        </div>
+        <div className='single-run-display'>
+          <figure className='b-s-figure'>
+            <img src={runaway.image} alt={runaway.brand} className='s-r-image' />
+          </figure>
+          <section className='buttons-to-user'>
 
-        {isLoggedIn && isFav &&
-                        <button onClick={handleRemFav}>
-                          Delete from My WishList
+            {isLoggedIn && isFav &&
+                        <button className='s-r-botton-delete'onClick={handleRemFav}>
+                          DELETE FROM MY WISHLIST
                         </button>
-        }
+            }
                         
                       
-        {isLoggedIn && !isFav && 
-                        <button onClick={handleAddFav}>
-                          Add to My WishList
+            {isLoggedIn && !isFav && 
+                        <button className='s-r-botton-add'onClick={handleAddFav}>
+                          ADD TO MY WISHLIST
                         </button>
-        }
+            }
                       
 
-        {isLoggedIn && (
-          <div>
-            <Link to={`/runaways/${runaway.id}/comment`}>
-              <button> Comment </button>
-            </Link>
-          </div>
-        )} 
-        {isLoggedIn && (
-          <div>
-            <button onClick={handleClick}> Rent </button>
+            {isLoggedIn && (
+              <>
+                {//<div>
+                  //   <Link to={`/runaways/${runaway.id}/comment`}>
+                  //     <button> Comment </button>
+                  //   </Link>
+                  // </div>
+                }
+              </>
+            )} 
+            {isLoggedIn && (
+              <div>
+                <button className='s-r-botton-rent' onClick={handleClick}> RENT: $20 per day </button>
           
-          </div>
-        )} 
-        {isLoggedIn && (
-          <div>
-            <button onClick={handleBuyClick}> Buy </button>
+              </div>
+            )} 
+            {isLoggedIn && (
+              <div>
+                <button className='s-r-botton-buy'onClick={handleBuyClick}> Buy: {runaway.sale_price}</button>
           
+              </div>
+            )} 
+          </section>
+        </div>
+        <div className={ popUpOpen ? 'open' : 'closed' }>
+          <div className='pop-up-frame'>
+            <p>Do you want to confirm the rent?</p>
+            <input type = 'date' onChange={handleChange}></input>
+            <button className='button-pop-up' onClick={handleRent}>Confirm the Rent</button>
+            <button className='button-pop-up' onClick={cancelRent}>Cancel the Rent</button>
           </div>
-        )} 
-      </section>
-      <div className={ popUpOpen ? 'open' : 'closed' }>
-        <p>here is the pop-up</p>
-        <input type = 'date' onChange={handleChange}></input>
-        <button onClick={handleRent}>Confirm the Rent</button>
-        <button>Cancel the Rent</button>
-      </div>
-      <div className={ popUpBuyOpen ? 'open' : 'closed' }>
-        <p>Are you sure you want to continue?</p>
-        <button onClick={handleBuy}>Confirm the purchase</button>
-        <button>Cancel the purchase</button>
+        </div>
+        <div className={ popUpBuyOpen ? 'open' : 'closed' }>
+          <div className='pop-up-frame'>
+            <p>Are you sure you want to continue?</p>
+            <button className='button-pop-up' onClick={handleBuy}>Confirm the purchase</button>
+            <button className='button-pop-up' onClick={cancelBuy}>Cancel the purchase</button>
+          </div>
+        </div>
       </div>
     </>
 
