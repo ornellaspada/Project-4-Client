@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { Link } from 'react-router-dom'
 
 function RunCardBuy({ datePurchased, runaway }) {

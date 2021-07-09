@@ -1,8 +1,9 @@
+/* eslint-disable camelcase */
 import { Link } from 'react-router-dom'
 
 function RunCardRent({ runaway, date_rented, date_returned }) {
   console.log(date_rented, runaway)
-  const { id, brand, year, season, image, sale_price, rent_price } = runaway
+  const { id, brand, year, season, image, rent_price } = runaway
   return (
     <div className="singleframe_run1">
       <Link to={`/runaways/${id}`} style={{ textDecoration: 'none', color: 'black' }}>

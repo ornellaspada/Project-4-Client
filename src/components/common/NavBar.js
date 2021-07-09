@@ -34,7 +34,7 @@ function NavBar() {
                 
           }
           {!isLoggedIn ?
-            <div className="navbar-items navbar-login"><Link to = '/login/' className=' link-nav' href='/' style={{ textDecoration: 'none', color: 'black'}}>Log In</Link> </div>
+            <div className="navbar-items navbar-login"><Link to = '/login/' className=' link-nav' href='/' style={{ textDecoration: 'none', color: 'black' }}>Log In</Link> </div>
             :
             <div className='navbar-items navbar-logout link-nav' onClick= {handleLogout}>
                   Log out</div>

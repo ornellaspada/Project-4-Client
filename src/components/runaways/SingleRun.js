@@ -1,11 +1,11 @@
 import React from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 
 
 import {
   getSingleRunaway,
-  deleteRunaway, 
+  // deleteRunaway, 
   checkFav,
   removeFav, 
   addFav,
@@ -22,7 +22,7 @@ function SingleRun() {
   const [popUpOpen, setPopUpOpen] = React.useState(false)
   const [popUpBuyOpen, setPopUpBuyOpen] = React.useState(false)
   const [dateChoosen, setDateChoosen] = React.useState(null)
-  const [isError, setIsError] = React.useState(false)
+  const [setIsError] = React.useState(false)
   const isLoggedIn = isAuthenticated()
   const [isFav, setIsFav] = React.useState(null)
   
@@ -62,10 +62,10 @@ function SingleRun() {
     getData()
   }, [runId, isLoggedIn])
 
-  const handleDelete = async () => {
-    await deleteRunaway(runaway.id)
-    history.push('/favorite')
-  }
+  // const handleDelete = async () => {
+  //   await deleteRunaway(runaway.id)
+  //   history.push('/favorite')
+  // }
 
   const handleAddFav = async () => {
     await addFav(runaway.id)

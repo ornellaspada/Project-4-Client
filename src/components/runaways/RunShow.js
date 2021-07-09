@@ -2,13 +2,13 @@ import React from 'react'
 // import axios from 'axios'
 
 
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import {
   getAllRunaways
 } from '../../lib/api'
 // import { isAuthenticated, isOwner } from '../../lib/auth'
 // import Error from '../common/Error'
-import { useHistory } from 'react-router'
+// import { useHistory } from 'react-router'
 import RunCard from './RunCard'
 
 function RunShow() {
@@ -16,8 +16,7 @@ function RunShow() {
   const [selectedBrand, setSelectedBrand] = React.useState('Brands')
   const [selectedSeason, setSelectedSeason] = React.useState('Season')
   const [selectedYear, setSelectedYear] = React.useState('Year')
-  const [isError, setIsError] = React.useState(false)
-  const history = useHistory()
+  const [setIsError] = React.useState(false)
   const { runawayId } = useParams()
 
   React.useEffect(() => {

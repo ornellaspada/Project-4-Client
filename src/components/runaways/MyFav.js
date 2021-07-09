@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { getUserProfile } from '../../lib/api'
 // import RunCard from './RunCard'
 import RunCardBuy from './RunCardBuy'

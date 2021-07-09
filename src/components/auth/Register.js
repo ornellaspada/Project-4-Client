@@ -5,7 +5,7 @@ import { useForm } from '../../hooks/useForm'
 
 function Register() {
   const history = useHistory()
-  const { formData, formErrors, handleChange, setFormErrors } = useForm({
+  const { formData, formErrors, handleChange } = useForm({
     
   })
   
