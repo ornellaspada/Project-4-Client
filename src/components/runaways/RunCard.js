@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { Link } from 'react-router-dom'
 
 function RunCard({ id, brand, year, season, image, sale_price, rent_price }) {
