@@ -1,12 +1,16 @@
 import React from 'react'
-import axios from 'axios'
 import { useHistory } from 'react-router'
 import { useForm } from '../../hooks/useForm'
+import { registerUser } from '../../lib/api'
 
 function Register() {
   const history = useHistory()
   const { formData, formErrors, handleChange } = useForm({
-    
+    username: '',
+    email: '', 
+    password: '', 
+    profileImage: '', 
+    passwordConfirmation: '', 
   })
   
   
@@ -16,7 +20,7 @@ function Register() {
     try {
       // const res = 
       console.log(formData)
-      const response = await axios.post('/api/auth/register/', formData) 
+      const response =  await registerUser(formData)
       console.log(response)
       history.push('/login/')
     }  catch  (err) {

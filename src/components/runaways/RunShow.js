@@ -16,7 +16,8 @@ function RunShow() {
   const [selectedBrand, setSelectedBrand] = React.useState('Brands')
   const [selectedSeason, setSelectedSeason] = React.useState('Season')
   const [selectedYear, setSelectedYear] = React.useState('Year')
-  const [setIsError] = React.useState(false)
+  // eslint-disable-next-line
+  const [ IsError,setIsError] = React.useState(false)
   const { runawayId } = useParams()
 
   React.useEffect(() => {
@@ -33,7 +34,7 @@ function RunShow() {
   
     
     getData()
-  }, [runawayId])
+  }, [runawayId, setIsError])
 
   const handleChange = (e) =>{
     setSelectedBrand(e.target.value)

@@ -41,6 +41,7 @@ function SingleRun() {
   
     
     getData()
+    //eslint-disable-next-line
   }, [runId])
   
 
@@ -60,6 +61,7 @@ function SingleRun() {
       }
     }
     getData()
+    // eslint-disable-next-line
   }, [runId, isLoggedIn])
 
   // const handleDelete = async () => {

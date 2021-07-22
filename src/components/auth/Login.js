@@ -1,9 +1,9 @@
 import React from 'react'
-import axios from 'axios'
 import { useHistory } from 'react-router'
 
 import { setToken } from '../../lib/auth'
 import { useForm } from '../../hooks/useForm'
+import { loginUser } from '../../lib/api'
 
 function Login(){
   const history = useHistory()
@@ -18,7 +18,7 @@ function Login(){
     e.preventDefault()
   
     try {
-      const res = await axios.post('/api/auth/login/', formData)
+      const res = await loginUser(formData)
       console.log(res)
       setToken(res.data.token)
       history.push('/runaways')
