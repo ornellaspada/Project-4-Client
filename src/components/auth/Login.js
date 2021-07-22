@@ -23,7 +23,6 @@ function Login(){
       setToken(res.data.token)
       history.push('/runaways')
     } catch (err) {
-      console.log(err.response)
       setIsError(true)
     }
   }
