@@ -22,7 +22,7 @@ function SingleRun() {
   const [popUpOpen, setPopUpOpen] = React.useState(false)
   const [popUpBuyOpen, setPopUpBuyOpen] = React.useState(false)
   const [dateChoosen, setDateChoosen] = React.useState(null)
-  const [setIsError] = React.useState(false)
+  const [isError, setIsError] = React.useState(false)
   const isLoggedIn = isAuthenticated()
   const [isFav, setIsFav] = React.useState(null)
   
